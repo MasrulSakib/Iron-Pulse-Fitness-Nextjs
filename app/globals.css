@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+    body {
+        font-family: var(--font-roboto);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: var(--font-oswald);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        color: var(--color-white);
+        font-size: var(--text-7xl);
+        letter-spacing: var(--letter-spacing-widest);
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 26px;
+    }
+
+    h5 {
+        font-size: 22px;
+    }
+
+    @media (min-width: 1024px) {
+        h1 {
+            font-size: 128px;
+        }
+    }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+    /* --*: initial; */
+    --container-*: initial;
+    --container: 15px;
+    --breakpoint-*: initial;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1400px;
+    --font-roboto: var(--font-roboto);
+    --font-oswald: var(--font-oswald);
+    --color-primary: #333;
+    --color-primary-100: #484848;
+    --color-primary-200: #151515;
+    --color-primary-300: #111;
+    --color-accent: #d4000d;
+    --letter-spacing-widest: -3px;
 }
