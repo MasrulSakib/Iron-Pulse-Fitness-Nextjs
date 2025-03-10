@@ -17,8 +17,8 @@
 
     h1 {
         color: var(--color-white);
-        font-size: var(--text-7xl);
-        letter-spacing: var(--letter-spacing-widest);
+        font-size: var(--text-6xl);
+        line-height: var(--text-6xl--line-height);
     }
 
     h2 {
@@ -42,12 +42,25 @@
             font-size: 128px;
         }
     }
+
+    .active {
+        color: var(--color-accent);
+    }
+
+    .container {
+        padding: var(--container-padding);
+        margin: 0 auto;
+    }
+
+    .bg-hero {
+        background-image: var(--background-image-hero);
+    }
 }
 
 @theme {
     /* --*: initial; */
     --container-*: initial;
-    --container: 15px;
+    --container-padding: 15px;
     --breakpoint-*: initial;
     --breakpoint-sm: 640px;
     --breakpoint-md: 768px;
@@ -60,5 +73,6 @@
     --color-primary-200: #151515;
     --color-primary-300: #111;
     --color-accent: #d4000d;
-    --letter-spacing-widest: -3px;
+    /* --spacing-widest: -3px; */
+    --background-image-hero: url(/assets/img/hero/bg.jpg);
 }
