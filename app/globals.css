@@ -55,6 +55,10 @@
     .bg-hero {
         background-image: var(--background-image-hero);
     }
+
+    .bg-membership {
+        background-image: var(--background-image-membership);
+    }
 }
 
 @theme {
@@ -75,4 +79,5 @@
     --color-accent: #d4000d;
     /* --spacing-widest: -3px; */
     --background-image-hero: url(/assets/img/hero/bg.jpg);
+    --background-image-membership: url(/assets/img/membership/bg.jpg);
 }
