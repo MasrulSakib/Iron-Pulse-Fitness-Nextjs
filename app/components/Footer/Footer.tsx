@@ -12,7 +12,7 @@ const Footer = () => {
                     src={'/assets/img/logo.png'}
                 />
                 <p>
-                    Iron Pulse Ltd.
+                    Iron Pulse fitness
                     <br />
                     Providing reliable services since 2025
                 </p>

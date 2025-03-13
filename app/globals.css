@@ -4,6 +4,7 @@
 @layer base {
     body {
         font-family: var(--font-roboto);
+        color: black;
     }
 
     h1,
@@ -79,6 +80,7 @@
     --breakpoint-xl: 1400px;
     --font-roboto: var(--font-roboto);
     --font-oswald: var(--font-oswald);
+    --color-white: #fff;
     --color-primary: #333;
     --color-primary-100: #484848;
     --color-primary-200: #151515;
