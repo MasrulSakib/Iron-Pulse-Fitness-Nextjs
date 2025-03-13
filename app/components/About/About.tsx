@@ -57,7 +57,7 @@ const About = () => {
                                     {feature.icon}
                                 </div>
                                 <div className='flex flex-col justify-center items-center gap-2  text-center'>
-                                    <h4 className='h4 text-accent'>
+                                    <h4 className='h4 text-accent-100'>
                                         {feature.title}
                                     </h4>
                                     <p>{feature.subtitle}</p>

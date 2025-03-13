@@ -83,7 +83,7 @@ const Team = () => {
                                 <div className='flex gap-12 justify-center'>
                                     {trainer.social.map((social, index) => {
                                         return <div key={index}>
-                                            <Link href={social.href} className='hover:text-accent transition-all'>
+                                            <Link href={social.href} className='hover:text-accent-100 transition-all'>
                                                 <social.icon className='text-lg'></social.icon>
                                             </Link>
                                         </div>

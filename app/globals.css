@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 @layer base {
     body {
@@ -44,8 +45,9 @@
     }
 
     .active {
-        color: var(--color-accent);
+        color: var(--color-accent-100);
     }
+
 
     .container {
         padding: var(--container-padding);
@@ -58,6 +60,11 @@
 
     .bg-membership {
         background-image: var(--background-image-membership);
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        background-color: var(--color-accent-100) !important;
     }
 }
 
@@ -76,7 +83,7 @@
     --color-primary-100: #484848;
     --color-primary-200: #151515;
     --color-primary-300: #111;
-    --color-accent: #d4000d;
+    --color-accent-100: #d4000d;
     /* --spacing-widest: -3px; */
     --background-image-hero: url(/assets/img/hero/bg.jpg);
     --background-image-membership: url(/assets/img/membership/bg.jpg);

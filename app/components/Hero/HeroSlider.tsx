@@ -19,7 +19,7 @@ const HeroSlider = () => {
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.2 }}
                         className='h1 text-center lg:text-left mb-2'>
-                        <span className='text-accent'>Built by Grit,</span> Driven by Success
+                        <span className='text-accent-100'>Built by Grit,</span> Driven by Success
                     </motion.h1>
                     <motion.p
                         variants={fadeIn('up', 0.6)}
@@ -50,7 +50,7 @@ const HeroSlider = () => {
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.2 }}
                         className='h1 text-center lg:text-left mb-2'>
-                        <span className='text-accent'>From Hustle</span> to Legacy
+                        <span className='text-accent-100'>From Hustle</span> to Legacy
                     </motion.h1>
                     <motion.p
                         variants={fadeIn('up', 0.6)}
@@ -78,8 +78,8 @@ const HeroSlider = () => {
         <SwiperNavButtons
             containerStyles='absolute bottom-2 lg:bottom-0 right-0 lg:h-[130px] w-full lg:w-[700px] z-50 flex justify-center lg:justify-start gap-1'
             iconStyles='text-2xl'
-            btnStyles='flex justify-center items-center hover:bg-accent
-            border border-accent text-white w-[56px] h-[56px] transition-all duration-300'>
+            btnStyles='flex justify-center items-center hover:bg-accent-100
+            border border-accent-100 text-white w-[56px] h-[56px] transition-all duration-300'>
         </SwiperNavButtons>
     </Swiper>
 }

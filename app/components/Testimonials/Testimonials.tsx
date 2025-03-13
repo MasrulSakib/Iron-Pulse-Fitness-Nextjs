@@ -41,7 +41,7 @@ const testimonialData = [
 
 const Testimonials = () => {
     return (
-        <section className='py-12 xl:py-28' id='testimonials'>
+        <section className='py-12 xl:py-28 md:px-5 px-0' id='testimonials'>
             <div className="container mx-auto">
                 <motion.h2
                     variants={fadeIn('up', 0.4)}
@@ -82,12 +82,12 @@ const Testimonials = () => {
                                     width={90}
                                     height={90}
                                     alt={review.name}
-                                    className="rounded-full border-2 border-accent"
+                                    className="rounded-full border-2 border-accent-100"
                                 />
                                 <div className="flex flex-col justify-center items-center ">
                                     <FaQuoteLeft className="text-2xl text-gray-300"></FaQuoteLeft>
                                     <p className="max-w-[380px] mb-4">{review.message}</p>
-                                    <span className="text-2xl text-accent">{review.name}</span>
+                                    <span className="text-2xl text-accent-100">{review.name}</span>
                                 </div>
                             </div>
                         </SwiperSlide>

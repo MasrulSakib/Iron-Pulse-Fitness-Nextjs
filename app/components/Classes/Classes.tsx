@@ -50,7 +50,7 @@ const Classes = () => {
                                     initial='hidden'
                                     whileInView={'show'}
                                     viewport={{ once: false, amount: 0.2 }}
-                                    className='h3 text-accent'>{item.name}</motion.h3>
+                                    className='h3 text-accent-100'>{item.name}</motion.h3>
                                 <motion.p
                                     variants={fadeIn('up', 0.6)}
                                     initial='hidden'

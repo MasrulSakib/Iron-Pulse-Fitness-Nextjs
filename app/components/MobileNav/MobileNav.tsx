@@ -28,7 +28,7 @@ const MobileNav = ({ containerStyles }: { containerStyles: string }) => {
                             smooth
                             spy
                             activeClass={`${!isMobile && 'active'}`}
-                            className='cursor-pointer transition-all hover:text-accent'
+                            className='cursor-pointer transition-all hover:text-accent-100'
                             key={index}
                         >
                             {link.name}

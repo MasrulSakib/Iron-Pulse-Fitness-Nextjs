@@ -40,8 +40,8 @@ const Headers = () => {
                 <Nav containerStyles='py-12 flex gap-4 hidden text-base uppercase font-medium transition-all xl:flex'></Nav>
                 <div className='flex items-center gap-4'>
                     <div className='text-white flex items-center gap-4'>
-                        <button className='hover:text-accent transition-all text-base uppercase font-medium'>Login</button>
-                        <button className='hover:text-accent transition-all text-base uppercase font-medium'>Register</button>
+                        <button className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Login</button>
+                        <button className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Register</button>
                     </div>
                     <div className='xl:hidden'>
                         <button onClick={() => setOpenNav(!openNav)} className='text-white flex items-center'>

@@ -70,9 +70,9 @@ const Achivements = () => {
                             variants={stateItems}
                             className='flex flex-col justify-center items-center'
                             key={index}>
-                            <div className='border border-accent/90 w-[140px] h-[140px] mx-auto rounded-full p-1 mb-6'>
+                            <div className='border border-accent-100/90 w-[140px] h-[140px] mx-auto rounded-full p-1 mb-6'>
                                 <div ref={ref}
-                                    className='border border-accent/30 w-full h-full flex items-center justify-center text-5xl rounded-full'>
+                                    className='border border-accent-100/30 w-full h-full flex items-center justify-center text-5xl rounded-full'>
                                     {
                                         isInView && (
                                             <CountUp start={0} end={stat.number} duration={6}></CountUp>
