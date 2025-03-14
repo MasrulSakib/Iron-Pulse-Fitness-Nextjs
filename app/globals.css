@@ -63,6 +63,14 @@
         background-image: var(--background-image-membership);
     }
 
+    .bg-login {
+        background-image: var(--background-image-login);
+    }
+
+    .bg-signup {
+        background-image: var(--background-image-signup);
+    }
+
     .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
     .swiper-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         background-color: var(--color-accent-100) !important;
@@ -89,4 +97,6 @@
     /* --spacing-widest: -3px; */
     --background-image-hero: url(/assets/img/hero/bg.jpg);
     --background-image-membership: url(/assets/img/membership/bg.jpg);
+    --background-image-login: url(/assets/img/login/bg.jpg);
+    --background-image-signup: url(/assets/img/signup/bg.jpg);
 }

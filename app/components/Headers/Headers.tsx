@@ -43,8 +43,8 @@ const Headers = () => {
                 {/* Buttons */}
                 <div className='flex items-center gap-4'>
                     <div className='text-white flex items-center gap-4'>
-                        <button className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Login</button>
-                        <button className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Register</button>
+                        <Link href='login' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Login</Link>
+                        <Link href='signup' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Register</Link>
                     </div>
 
                     {/* Mobile Menu Button */}
