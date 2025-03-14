@@ -134,7 +134,7 @@ const MembershipSlides = () => {
 
                 }
             }}
-            className="min-h-[680px]"
+            className="sm:min-h-[680px]"
         >
             {membershipSlides.map((item, index) => {
                 return <SwiperSlide key={index}>
