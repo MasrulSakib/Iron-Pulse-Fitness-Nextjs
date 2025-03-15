@@ -125,16 +125,15 @@ const MembershipSlides = () => {
             breakpoints={{
                 768: {
                     slidesPerView: 2,
-                    spaceBetween: 30,
+                    spaceBetween: 20,
 
                 },
                 1024: {
                     slidesPerView: 3,
-                    spaceBetween: 30,
-
-                }
+                    spaceBetween: 20,
+                },
             }}
-            className="sm:min-h-[680px]"
+            className="h-full min-h-[680px]"
         >
             {membershipSlides.map((item, index) => {
                 return <SwiperSlide key={index}>
@@ -147,7 +146,7 @@ const MembershipSlides = () => {
                             <ul className="flex flex-col gap-5 mb-7">
                                 {item.benefits.map((item, index) => {
                                     return (
-                                        <li className="flex flex-center gap-2" key={index}>
+                                        <li className="flex items-center gap-2" key={index}>
                                             <item.icon className="text-accent-100 text-lg" />
                                             {item.text}
                                         </li>
@@ -155,9 +154,9 @@ const MembershipSlides = () => {
                                 })}
                             </ul>
                             <p className="text-accent-100 mb-8 flex gap-1 items-center">
-                                <sup className="text-3xl sm:text-4xl">$</sup>
-                                <strong className="text-5xl sm:text-6xl">{item.price}</strong>
-                                <em className="self-end text-xl sm:text-2xl">/Month</em>
+                                <sup className="text-4xl">$</sup>
+                                <strong className="text-6xl">{item.price}</strong>
+                                <em className="self-end text-2xl">/Month</em>
                             </p>
                             <CustomButton containerStyles="w-[176px] sm:w-[196px] h-[52px] sm:h-[62px]" text="Buy now"></CustomButton>
                         </div>

@@ -2,7 +2,7 @@ import CustomButton from '../components/CustomButton/CustomButton';
 
 const Login = () => {
     return (
-        <div className="hero bg-login bg-cover bg-center relative before:w-full before:h-full before:bg-black/50 
+        <div className="hero h-full bg-login bg-cover bg-center relative before:w-full before:h-full before:bg-black/50 
         before:absolute before:top-0 before:z-10 min-h-screen mt-20 xl:mt-0">
             <div className="hero-content flex flex-col relative z-20">
                 <div className="text-center lg:text-left">
