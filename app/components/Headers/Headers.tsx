@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import MobileNav from '../MobileNav/MobileNav';
 import { MdMenu } from 'react-icons/md';
+import { SignInButton, SignUpButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignOutButton } from '@clerk/clerk-react';
 
 const Headers = () => {
     const [headerActive, setHeaderActive] = useState(false);
@@ -43,8 +45,19 @@ const Headers = () => {
                 {/* Buttons */}
                 <div className='flex items-center gap-4'>
                     <div className='text-white flex items-center gap-4'>
-                        <Link href='login' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Login</Link>
-                        <Link href='signup' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Register</Link>
+                        <SignedOut>
+                            <SignInButton mode='modal'>
+                                <Link href='#' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Login</Link>
+                            </SignInButton>
+                            <SignUpButton>
+                                <Link href='#' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Register</Link>
+                            </SignUpButton>
+                        </SignedOut>
+                        <SignedIn>
+                            <SignOutButton>
+                                <Link href='#' className='hover:text-accent-100 transition-all text-base uppercase font-medium'>Log Out</Link>
+                            </SignOutButton>
+                        </SignedIn>
                     </div>
 
                     {/* Mobile Menu Button */}

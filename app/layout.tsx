@@ -3,6 +3,7 @@ import { Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 import Headers from "./components/Headers/Headers";
 import Footer from "./components/Footer/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -27,14 +28,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-gray-200">
-      <body
-        className={`${oswald.variable} ${roboto.variable} mx-auto w-full max-w-[1920px] bg-white`}
-      >
-        <Headers />
-        {children}
-        <Footer></Footer>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="bg-gray-200">
+        <body
+          className={`${oswald.variable} ${roboto.variable} mx-auto w-full max-w-[1920px] bg-white`}
+        >
+          <Headers />
+          {children}
+          <Footer></Footer>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
