@@ -11,7 +11,7 @@ const trainedData = [
         image: '/assets/img/trainers/david.jpg',
         name: 'David Williams',
         role: 'Body Builder Coach',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+        description: 'David specializes in strength training and hypertrophy, guiding clients to build impressive and defined physiques.',
         social: [
             { icon: FaFacebook, href: 'http://facebook.com' },
             { icon: FaTwitter, href: 'http://twitter.com' },
@@ -22,7 +22,7 @@ const trainedData = [
         image: '/assets/img/trainers/rosy.jpg',
         name: 'Rosy Rivara',
         role: 'Cardio Coach',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+        description: 'Rosy excels in high-intensity cardio workouts, helping clients torch calories and enhance cardiovascular endurance.',
         social: [
             { icon: FaFacebook, href: 'http://facebook.com' },
             { icon: FaTwitter, href: 'http://twitter.com' },
@@ -33,7 +33,7 @@ const trainedData = [
         image: '/assets/img/trainers/matt.jpg',
         name: 'Matt Stone',
         role: 'Fitness Coach',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+        description: 'Matt is a versatile coach who motivates clients to achieve their fitness goals, no matter what they may be.',
         social: [
             { icon: FaFacebook, href: 'http://facebook.com' },
             { icon: FaTwitter, href: 'http://twitter.com' },
@@ -44,14 +44,14 @@ const trainedData = [
         image: '/assets/img/trainers/sofia.jpg',
         name: 'Sofia Louren',
         role: 'Crossfit Coach',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+        description: 'Sofia is an experienced Crossfit coach, ready to push you beyond your limits and help you discover your inner strength.',
         social: [
             { icon: FaFacebook, href: 'http://facebook.com' },
             { icon: FaTwitter, href: 'http://twitter.com' },
             { icon: FaYoutube, href: 'http://youtube.com' },
         ],
     },
-]
+];
 
 const Team = () => {
     return (

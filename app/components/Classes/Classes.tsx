@@ -3,32 +3,30 @@ import { motion } from 'framer-motion';
 import CustomButton from '../CustomButton/CustomButton';
 import { fadeIn } from '../lib/Varients';
 import Image from 'next/image';
-
-const classes = [
-    {
-        name: 'Body Building',
-        img: '/assets/img/classes/bodybuilding.jpg',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni facilis eligendi quidem aspernatur, dolor.'
-    },
-    {
-        name: 'Cardio',
-        img: '/assets/img/classes/cardio.jpg',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni facilis eligendi quidem aspernatur, dolor.'
-    },
-    {
-        name: 'Crossfit',
-        img: '/assets/img/classes/crossfit.jpg',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni facilis eligendi quidem aspernatur, dolor.'
-    },
-    {
-        name: 'Fitness',
-        img: '/assets/img/classes/fitness.jpg',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni facilis eligendi quidem aspernatur, dolor.'
-    },
-]
-
+import { useAppDispatch, useAppSelector } from '@/app/hooks';
+import { fetchClassData } from '@/app/features/classes/classSlice';
+import { useEffect } from 'react';
 
 const Classes = () => {
+
+    const { classes, isLoading, isError, error } = useAppSelector((state) => state.class);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchClassData());
+    }, [dispatch]);
+
+    if (isLoading) {
+        return <h1>Loading....</h1>;
+    }
+
+    if (isError) {
+        return <h1>{error}</h1>;
+    }
+
+    if (!classes || classes.length === 0) {
+        return <h1>No Posts to show</h1>;
+    }
     return (
         <section id='class'>
             <motion.div

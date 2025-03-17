@@ -8,20 +8,20 @@ import Achivements from '../Achivements/Achivements';
 const featured = [
     {
         icon: <FaUsers />,
-        title: 'Award Winning Trainners',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis veniam ipsa maxime incidunt odit itaque atque minus reprehenderit nisi numquam?',
+        title: 'Award Winning Trainers',
+        subtitle: "Our trainers are recognized for their expertise and dedication, ensuring you receive top-tier guidance and personalized fitness plans.",
     },
     {
         icon: <IoIosPricetag />,
         title: 'Excellent Prices',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis veniam ipsa maxime incidunt odit itaque atque minus reprehenderit nisi numquam?',
+        subtitle: "We offer a range of affordable membership options, allowing you to access premium fitness facilities and services without breaking the bank.",
     },
     {
         icon: <FaDumbbell />,
         title: 'Modern Equipment',
-        subtitle: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis veniam ipsa maxime incidunt odit itaque atque minus reprehenderit nisi numquam?',
+        subtitle: "Experience the latest in fitness technology with our cutting-edge equipment, designed to maximize your workout efficiency and results.",
     }
-]
+];
 
 const About = () => {
     return (
@@ -39,9 +39,9 @@ const About = () => {
                         initial='hidden'
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.3 }}
-                        className='max-w-[600px] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
-                        mollitia natus necessitatibus quasi temporibus iste modi nobis
-                        ipsum ex fuga?</motion.p>
+                        className='max-w-[600px] mx-auto text-center'>Strength redefined. Expert coaching, cutting-edge gear, and a vibrant community.
+                        Reach your peak fitness at Iron Pulse.
+                    </motion.p>
                 </div>
                 <motion.div
                     variants={fadeIn('up', 0.8)}

@@ -1,0 +1,22 @@
+[
+    {
+      "name": "Body Building",
+      "img": "/assets/img/classes/bodybuilding.jpg",
+      "description": "Sculpt your physique and build strength with our targeted Body Building program. Expect intense workouts for noticeable results."
+    },
+    {
+      "name": "Cardio",
+      "img": "/assets/img/classes/cardio.jpg",
+      "description": "Boost your endurance and torch calories in our dynamic Cardio classes. Fun and sweat are guaranteed!"
+    },
+    {
+      "name": "Crossfit",
+      "img": "/assets/img/classes/crossfit.jpg",
+      "description": "Challenge yourself with our varied and functional Crossfit program. Achieve total fitness through diverse workouts."
+    },
+    {
+      "name": "Fitness",
+      "img": "/assets/img/classes/fitness.jpg",
+      "description": "Reach your fitness goals with our motivating group Fitness classes. Experience variety and effective training."
+    }
+  ]

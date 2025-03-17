@@ -27,8 +27,7 @@ const HeroSlider = () => {
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.2 }}
                         className='text-white italic text-center lg:text-left mb-4'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed necessitatibus
-                        facere deserunt.
+                        Transform your body and mind with our tailored fitness programs and dedicated trainers.
                     </motion.p>
                     <motion.div
                         variants={fadeIn('up', 0.8)}
@@ -58,8 +57,7 @@ const HeroSlider = () => {
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.2 }}
                         className='text-white italic text-center lg:text-left mb-4'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed necessitatibus
-                        facere deserunt.
+                        Your path to peak performance starts here, with personalized training and proven results.
                     </motion.p>
                     <motion.div
                         variants={fadeIn('up', 0.8)}

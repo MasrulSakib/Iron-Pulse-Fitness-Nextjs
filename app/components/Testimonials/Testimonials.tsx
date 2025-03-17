@@ -5,41 +5,34 @@ import { FaQuoteLeft } from "react-icons/fa"
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react"
 import { fadeIn } from "../lib/Varients";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { fetchtestimonialData } from "@/app/features/testimonials/testimonialSlice";
+import { useEffect } from "react";
 
-const testimonialData = [
-    {
-        img: '/assets/img/testimonial/lucy.jpg',
-        message: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatibus consequatur, vitae beatae inventore repudiandae.',
-        name: 'Lucy Anthony',
-    },
-    {
-        img: '/assets/img/testimonial/michael.jpg',
-        message: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatibus consequatur, vitae beatae inventore repudiandae.',
-        name: 'Michael Smith',
-    },
-    {
-        img: '/assets/img/testimonial/maria.jpg',
-        message: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatibus consequatur, vitae beatae inventore repudiandae.',
-        name: 'Maria Garcia',
-    },
-    {
-        img: '/assets/img/testimonial/lucy.jpg',
-        message: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatibus consequatur, vitae beatae inventore repudiandae.',
-        name: 'Lucy Anthony',
-    },
-    {
-        img: '/assets/img/testimonial/michael.jpg',
-        message: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatibus consequatur, vitae beatae inventore repudiandae.',
-        name: 'Michael Smith',
-    },
-    {
-        img: '/assets/img/testimonial/maria.jpg',
-        message: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatibus consequatur, vitae beatae inventore repudiandae.',
-        name: 'Maria Garcia',
-    },
-]
+
 
 const Testimonials = () => {
+
+    const { testimonials, isLoading, isError, error } = useAppSelector((state) => state.testimonial);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchtestimonialData());
+    }, [dispatch]);
+
+    if (isLoading) {
+        return <h1>Loading....</h1>;
+    }
+
+    if (isError) {
+        return <h1>{error}</h1>;
+    }
+
+    if (!testimonials || testimonials.length === 0) {
+        return <h1>No Posts to show</h1>;
+    }
+
+
     return (
         <section className='py-12 xl:py-28 md:px-5 px-0' id='testimonials'>
             <div className="container mx-auto">
@@ -74,7 +67,7 @@ const Testimonials = () => {
                         }
                     }}
                     className="h-[350px]">
-                    {testimonialData.map((review, index) => {
+                    {testimonials.map((review, index) => {
                         return <SwiperSlide className="h-full" key={index}>
                             <div className="flex flex-col justify-center items-center gap-6 text-center h-full">
                                 <Image

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,73 +10,47 @@ import { motion } from 'framer-motion'
 import { fadeIn } from '../lib/Varients';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useAppDispatch, useAppSelector } from '@/app/hooks';
+import { fetchBlogData } from '@/app/features/blogs/blogSlice';
 
-const blogData = [
-    {
-        img: '/assets/img/blog/post1.jpg',
-        data: 'April 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post2.jpg',
-        data: 'March 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post3.jpg',
-        data: 'January 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post4.jpg',
-        data: 'March 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post1.jpg',
-        data: 'November 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post2.jpg',
-        data: 'October 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post3.jpg',
-        data: 'December 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-    {
-        img: '/assets/img/blog/post4.jpg',
-        data: 'February 10, 2024',
-        title: 'Maintain a perfect structure after workout',
-        href: '',
-    },
-]
 
 const Blog = () => {
+    const { blogs, isLoading, isError, error } = useAppSelector((state) => state.blog);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchBlogData());
+    }, [dispatch]);
+
+    if (isLoading) {
+        return <h1>Loading....</h1>;
+    }
+
+    if (isError) {
+        return <h1>{error}</h1>;
+    }
+
+    if (!blogs || blogs.length === 0) {
+        return <h1>No Posts to show</h1>;
+    }
+
     return (
         <section className='bg-primary-300 text-white py-24' id='blog'>
             <div className='container mx-auto'>
                 <motion.h2
                     variants={fadeIn('up', 0.4)}
                     initial="hidden"
-                    whileInView={"show"}
+                    whileInView="show"
                     viewport={{ once: false, amount: 0.2 }}
-                    className='h2 text-center mb-8'>Blogs
+                    className='h2 text-center mb-8'
+                >
+                    Blogs
                 </motion.h2>
+
                 <motion.div
                     variants={fadeIn('up', 0.6)}
                     initial="hidden"
-                    whileInView={"show"}
+                    whileInView="show"
                     viewport={{ once: false, amount: 0.2 }}
                 >
                     <Swiper
@@ -95,48 +70,50 @@ const Blog = () => {
                         }}
                         className='h-[420px] md:max-w-[660px] lg:max-w-none mb-8 mx-auto'
                     >
-                        {blogData.map((post, index) => {
-                            return (
-                                <SwiperSlide
-                                    key={index}>
-                                    <div className='flex flex-col justify-start max-w-[320px] mx-auto'>
-                                        <Image
-                                            src={post.img}
-                                            width={320}
-                                            height={266}
-                                            alt=''
-                                            className='mb-6'
-                                        />
-                                        <div className='flex flex-col items-start'>
-                                            <p className='max-w-[380px] uppercase text-[12px] tracking-[3px] mb-1'>{post.data}</p>
-                                            <Link
-                                                className='hover:text-accent-100 transition-all duration-300'
-                                                href={post.href}>
-                                                <h5>{post.title}</h5>
-                                            </Link>
-                                        </div>
+                        {blogs.map((post, index) => (
+                            <SwiperSlide key={index}>
+                                <div className='flex flex-col justify-start max-w-[320px] mx-auto'>
+                                    <Image
+                                        src={post.img}
+                                        width={320}
+                                        height={266}
+                                        alt={post.title}
+                                        className='mb-6'
+                                    />
+                                    <div className='flex flex-col items-start'>
+                                        <p className='max-w-[380px] uppercase text-[12px] tracking-[3px] mb-1'>
+                                            {post.date}
+                                        </p>
+                                        <Link
+                                            className='hover:text-accent-100 transition-all duration-300'
+                                            href={post.href}
+                                        >
+                                            <h5>{post.title}</h5>
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
-                            )
-                        })}
+                                </div>
+                            </SwiperSlide>
+                        ))}
                         <SwiperNavButtons
                             containerStyles='absolute left-0 right-0 bottom-[16rem] w-full max-w-[370px] sm:max-w-[620px] md:max-w-[960px] xl:max-w-[1320px] mx-auto
                             z-50 flex justify-between gap-1'
                             btnStyles='bg-accent-100 text-white w-[56px] h-[56px] flex justify-center items-center hover:bg-accent-100 transition-all duration-300'
-                            iconStyles='text-2xl' />
+                            iconStyles='text-2xl'
+                        />
                     </Swiper>
                 </motion.div>
+
                 <motion.div
                     variants={fadeIn('up', 0.8)}
                     initial="hidden"
-                    whileInView={"show"}
+                    whileInView="show"
                     viewport={{ once: false, amount: 0.2 }}
                 >
-                    <CustomButton containerStyles='block w-[196px] h-[62px] mx-auto' text='View all'></CustomButton>
+                    <CustomButton containerStyles='block w-[196px] h-[62px] mx-auto' text='View all' />
                 </motion.div>
             </div>
-        </section >
-    )
-}
+        </section>
+    );
+};
 
-export default Blog
+export default Blog;

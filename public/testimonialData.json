@@ -1,0 +1,32 @@
+[
+    {
+        "img": "/assets/img/testimonial/lucy.jpg",
+        "message": "I was truly impressed by the exceptional service. The team's dedication and promptness were very much appreciated. It made a significant difference.",
+        "name": "Lucy Anthony"
+    },
+    {
+        "img": "/assets/img/testimonial/michael.jpg",
+        "message": "The quality of this product is outstanding, and it has greatly improved my workflow. I am extremely satisfied with the overall experience. Highly recommended!",
+        "name": "Michael Smith"
+    },
+    {
+        "img": "/assets/img/testimonial/maria.jpg",
+        "message": "This solution has been a game-changer for our business. The results have been fantastic, and the support team is always helpful. We are very grateful for it.",
+        "name": "Maria Garcia"
+    },
+    {
+        "img": "/assets/img/testimonial/lucy.jpg",
+        "message": "I've been using this for a while now, and it consistently delivers excellent performance. It's reliable, efficient, and user-friendly. A great investment indeed!",
+        "name": "Lucy Anthony"
+    },
+    {
+        "img": "/assets/img/testimonial/michael.jpg",
+        "message": "From start to finish, the process was seamless and stress-free. The communication was excellent, and the final outcome exceeded all my expectations. Top-notch!",
+        "name": "Michael Smith"
+    },
+    {
+        "img": "/assets/img/testimonial/maria.jpg",
+        "message": "I highly recommend this product to anyone looking for a reliable and effective solution. It has made a huge difference, and I am incredibly pleased with it.",
+        "name": "Maria Garcia"
+    }
+]

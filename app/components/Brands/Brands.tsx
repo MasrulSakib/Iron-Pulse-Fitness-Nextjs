@@ -1,30 +1,11 @@
 "use client";
+import { fetchBrandData } from "@/app/features/brands/brandSlice";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react";
 
-const brandImages = [
-    {
-        src: '/assets/img/brands/brand-1.png',
-        href: ''
-    },
-    {
-        src: '/assets/img/brands/brand-2.png',
-        href: ''
-    },
-    {
-        src: '/assets/img/brands/brand-3.png',
-        href: ''
-    },
-    {
-        src: '/assets/img/brands/brand-4.png',
-        href: ''
-    },
-    {
-        src: '/assets/img/brands/brand-5.png',
-        href: ''
-    },
-]
 
 const brandContainerVarient = {
     hidden: {
@@ -35,7 +16,7 @@ const brandContainerVarient = {
         transition: {
             staggerChildren: 0.4,
             duration: 0.5,
-            ease: 'lenear'
+            ease: 'linear'
         },
     },
 }
@@ -54,6 +35,24 @@ const brandItem = {
 }
 
 const Brands = () => {
+    const { brands, isLoading, isError, error } = useAppSelector((state) => state.brand);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchBrandData());
+    }, [dispatch]);
+
+    if (isLoading) {
+        return <h1>Loading....</h1>;
+    }
+
+    if (isError) {
+        return <h1>{error}</h1>;
+    }
+
+    if (!brands || brands.length === 0) {
+        return <h1>No Posts to show</h1>;
+    }
     return (
         <section className='py-8' id='contacts'>
             <div className="container mx-auto">
@@ -63,7 +62,7 @@ const Brands = () => {
                     whileInView={'show'}
                     viewport={{ once: false, amount: 0.3 }}
                     className="grid grid-cols-2 lg:grid-cols-5 py-8">
-                    {brandImages.map((img, index) => {
+                    {brands.map((img, index) => {
                         return (
                             <motion.div
                                 variants={brandItem}
