@@ -6,6 +6,8 @@ Iron Pulse Fitness is a fully responsive and visually appealing fitness website 
 - **Next.js** – React framework for server-side rendering and static site generation.
 - **TypeScript** – Ensures type safety and better development experience.
 - **Framer Motion** – Adds smooth animations and transitions.
+- **Redux Toolkit (Async Thunk)** – Manages global state and async logic efficiently.
+- **Clerk** – Provides secure authentication and user management.
 - **React Icons** – Provides a variety of high-quality icons.
 - **React CountUp** – Animates numerical stats dynamically.
 - **React Scroll** – Enables smooth scrolling effects.
