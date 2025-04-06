@@ -160,7 +160,6 @@ const MembershipSlides = () => {
                             </p>
                             <CustomButton containerStyles="w-[176px] sm:w-[196px] h-[52px] sm:h-[62px]" text="Buy now"></CustomButton>
                         </div>
-
                     </div>
                 </SwiperSlide>
             })}

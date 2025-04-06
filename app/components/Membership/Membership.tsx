@@ -25,7 +25,7 @@ const Membership = () => {
                     initial='hidden'
                     whileInView={'show'}
                     viewport={{ once: false, amount: 0.2 }}
-                    className='px-6 xl:px-0'>
+                    className='px-6 xl:px-0 text-white'>
                     <MembershipSlides></MembershipSlides>
                 </motion.div>
             </div>
